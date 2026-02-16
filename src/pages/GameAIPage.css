@@ -1,0 +1,221 @@
+.gameai-page {
+  min-height: 100vh;
+  background: #e8e8e8;
+  padding: 24px 16px 48px;
+  position: relative;
+}
+
+.gameai-header-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 680px;
+  margin: 0 auto 48px;
+  padding: 0 24px;
+}
+
+.gameai-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #262626;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  align-self: flex-start;
+}
+
+.gameai-back:hover {
+  text-decoration: underline;
+}
+
+.gameai-header-card {
+  position: relative;
+  width: 100%;
+  background: var(--paper);
+  border-radius: 0;
+  box-shadow:
+    0 10px 38px rgba(0, 0, 0, 0.25),
+    0 6px 14px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+  padding: clamp(32px, 5vw, 48px);
+  overflow: hidden;
+  text-align: center;
+}
+
+.gameai-header-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(0, 0, 0, 0.04), transparent 60%),
+    radial-gradient(800px 400px at 120% 110%, rgba(0, 0, 0, 0.03), transparent 60%),
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.015), rgba(0, 0, 0, 0.015) 1px, transparent 1px, transparent 3px);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.gameai-title {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-family: "Copperplate Gothic", "Copperplate", "Cinzel", serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--ink);
+  position: relative;
+  z-index: 1;
+}
+
+.gameai-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  transform: translateX(-29px);
+}
+
+.gameai-section-card {
+  position: relative;
+  width: 100%;
+  background: var(--paper);
+  border-radius: 0;
+  box-shadow:
+    0 10px 38px rgba(0, 0, 0, 0.25),
+    0 6px 14px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+  padding: clamp(40px, 5vw, 60px);
+  overflow: hidden;
+}
+
+.gameai-section-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(0, 0, 0, 0.04), transparent 60%),
+    radial-gradient(800px 400px at 120% 110%, rgba(0, 0, 0, 0.03), transparent 60%),
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.015), rgba(0, 0, 0, 0.015) 1px, transparent 1px, transparent 3px);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.gameai-section-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.gameai-section-title {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-family: "Copperplate Gothic", "Copperplate", "Cinzel", serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--ink);
+  position: relative;
+  z-index: 1;
+  text-align: left;
+  flex: 1;
+}
+
+.gameai-section-date {
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  color: var(--muted);
+  font-weight: 500;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+  margin-top: 4px;
+}
+
+.gameai-section-content {
+  position: relative;
+  z-index: 1;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: clamp(14px, 1.8vw, 16px);
+}
+
+.gameai-subsection {
+  margin-bottom: 32px;
+}
+
+.gameai-subsection:last-child {
+  margin-bottom: 0;
+}
+
+.gameai-subsection-title {
+  margin: 0 0 12px;
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  font-family: "Copperplate Gothic", "Copperplate", "Cinzel", serif;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.gameai-paragraph {
+  margin: 0 0 16px;
+  line-height: 1.7;
+}
+
+.gameai-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.gameai-approach {
+  margin: 24px 0;
+  padding-left: 20px;
+  border-left: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+.gameai-approach-title {
+  margin: 0 0 8px;
+  font-size: clamp(0.95rem, 1.9vw, 1.1rem);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.gameai-focus {
+  margin: 24px 0;
+}
+
+.gameai-focus-title {
+  margin: 0 0 12px;
+  font-size: clamp(0.95rem, 1.9vw, 1.1rem);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.gameai-list {
+  margin: 0;
+  padding-left: 24px;
+  list-style: none;
+}
+
+.gameai-list li {
+  margin-bottom: 8px;
+  padding-left: 8px;
+  position: relative;
+}
+
+.gameai-list li::before {
+  content: "→";
+  position: absolute;
+  left: -16px;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.gameai-conclusion {
+  margin-top: 24px;
+  font-style: italic;
+  color: var(--ink);
+}
