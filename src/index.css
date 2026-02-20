@@ -270,6 +270,15 @@ body {
   color: var(--muted);
 }
 
+.section-hint {
+  margin-top: 16px;
+  font-size: clamp(12px, 1.5vw, 13px);
+  color: rgba(107, 107, 107, 0.5);
+  font-style: italic;
+  text-align: right;
+  letter-spacing: 0.3px;
+}
+
 .page-placeholder {
   min-height: 100vh;
   background: #e8e8e8;

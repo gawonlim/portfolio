@@ -27,6 +27,17 @@ export function Section({ title, children, index = 0, to }: SectionProps) {
       >
         {children}
       </motion.div>
+      {to && (
+        <motion.div
+          className="section-hint"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3, delay: 0.4, ease: [0.22, 0.61, 0.36, 1] }}
+        >
+          Click for more details
+        </motion.div>
+      )}
     </>
   )
 
