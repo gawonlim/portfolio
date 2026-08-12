@@ -29,17 +29,17 @@ function HomePage() {
             I earned my B.S. in Information Science with minors in Computer Science and Game Studies & Design at the <strong>University of Illinois Urbana-Champaign</strong>, where I am now pursuing my <strong>M.S. in Information Management</strong>.
           </p>
         </Section>
-        <Section title="Trustworthy AI" index={1} to="/trustworthy-ai">
+        <Section title="Game AI" index={1} to="/game-ai">
           <p className="muted">
-            Trustworthy AI is essential to ensure that intelligent systems act <strong>fairly, reliably, and transparently</strong>. My research focuses on enhancing the credibility and balance of AI models—from addressing class imbalance in traditional machine learning and long-tailed distributions in deep learning for image classification, to exploring uncertainty and fairness in large language models. Through this work, I aim to build <strong>AI systems</strong> that are both <strong>technically robust</strong> and <strong>aligned with human values</strong>.
+            My work in Game AI focuses on how <strong>LLMs and agentic systems</strong> can reshape both player experiences and game development workflows. At <strong>Smilegate AI Center's Behavior AI Team</strong>, I worked on a production-facing <strong>AI Companion</strong> that learns from player feedback, and developed <strong>CHARM-QA</strong>, an end-to-end QA/QC pipeline where autonomous <strong>Player Agents</strong> play conversational game content and <strong>Evaluator Agents</strong> assess NPC behavior. At <strong>Stu/dio</strong>, I continue building <strong>conversational NPC systems</strong> and <strong>multi-agent architectures</strong> for interactive simulation games.
+          </p>
+          <p className="muted">
+            Through these experiences, I have explored Game AI across three roles: <strong>Companion</strong>, <strong>Creator</strong>, and <strong>Evaluator</strong> — AI that builds relationships with players, generates and orchestrates game experiences, and autonomously tests and improves game content. My long-term goal is to build <strong>player-aware AI systems</strong> that can remember, reason, adapt, and continuously evolve with each player — making AI not simply a feature inside games, but a fundamental part of how games are created, played, and improved.
           </p>
         </Section>
-        <Section title="Game AI" index={2} to="/game-ai">
+        <Section title="Trustworthy AI" index={2} to="/trustworthy-ai">
           <p className="muted">
-            I currently work as a <strong>Game AI Programmer</strong> at <strong>Stu/dio</strong>, where I develop intelligent systems that enable adaptive and interactive gameplay experiences. My current work includes building <strong>conversational NPC systems</strong> powered by <strong>large language models</strong> and exploring <strong>AI-driven optimization techniques</strong> to improve game production workflows.
-          </p>
-          <p className="muted">
-            While these projects focus on enhancing gameplay and development efficiency today, my long-term vision is to build <strong>player-aware AI systems</strong> that learn from individual behavior, patterns, and preferences — ultimately enabling the autonomous generation of <strong>personalized game content</strong> tailored to each player's unique play style and needs.
+            Trustworthy AI is essential to ensure that intelligent systems act <strong>fairly, reliably, and transparently</strong>. My research focuses on enhancing the credibility and balance of AI models—from addressing class imbalance in traditional machine learning and long-tailed distributions in deep learning for image classification, to exploring uncertainty and fairness in large language models. Through this work, I aim to build <strong>AI systems</strong> that are both <strong>technically robust</strong> and <strong>aligned with human values</strong>.
           </p>
         </Section>
       </main>

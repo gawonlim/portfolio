@@ -219,3 +219,619 @@
   font-style: italic;
   color: var(--ink);
 }
+
+/* ============================================================
+   Featured industry case study (Smilegate)
+   Extends the existing paper-card language: hairlines, ink,
+   Copperplate headings. No new colors, no fills beyond a
+   near-transparent wash.
+   ============================================================ */
+
+:root {
+  --gameai-rule: rgba(0, 0, 0, 0.16);
+  --gameai-rule-soft: rgba(0, 0, 0, 0.1);
+  --gameai-wash: rgba(0, 0, 0, 0.015);
+}
+
+/* --- Group rails between card clusters --- */
+.gameai-rail {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: "Copperplate Gothic", "Copperplate", "Cinzel", serif;
+  font-size: clamp(0.68rem, 1.4vw, 0.78rem);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 8px 0 -8px;
+}
+
+.gameai-rail::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--gameai-rule);
+}
+
+/* --- Small label above a title --- */
+.gameai-eyebrow {
+  display: block;
+  position: relative;
+  z-index: 1;
+  font-family: "Copperplate Gothic", "Copperplate", "Cinzel", serif;
+  font-size: clamp(0.62rem, 1.3vw, 0.72rem);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+/* --- Role line under the section title --- */
+.gameai-role {
+  position: relative;
+  z-index: 1;
+  margin: -14px 0 24px;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+
+/* --- Opening paragraph / pull statements --- */
+.gameai-lede {
+  font-size: clamp(15px, 2vw, 17px);
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+/* --- Inline technical-area line --- */
+.gameai-tags {
+  margin: 0 0 28px;
+  padding: 12px 0;
+  border-top: 1px solid var(--gameai-rule-soft);
+  border-bottom: 1px solid var(--gameai-rule-soft);
+  font-size: clamp(12px, 1.5vw, 13.5px);
+  letter-spacing: 0.06em;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.gameai-tags--mono {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  letter-spacing: 0.02em;
+  margin-bottom: 0;
+}
+
+/* --- Two-project index --- */
+.gameai-index {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+.gameai-index li {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--gameai-rule-soft);
+}
+
+.gameai-index-num {
+  font-family: "Copperplate Gothic", "Copperplate", "Cinzel", serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.gameai-index strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* --- Project container --- */
+.gameai-project {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 2px solid var(--ink);
+}
+
+.gameai-project-title {
+  margin: 0 0 4px;
+  font-size: clamp(1.35rem, 2.8vw, 1.75rem);
+  font-family: "Copperplate Gothic", "Copperplate", "Cinzel", serif;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.gameai-project-sub {
+  margin: 0 0 28px;
+  font-size: clamp(0.95rem, 1.9vw, 1.05rem);
+  color: var(--muted);
+}
+
+.gameai-block {
+  margin-top: 40px;
+}
+
+.gameai-block .gameai-subsection-title {
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--gameai-rule);
+  margin-bottom: 16px;
+}
+
+.gameai-block .gameai-eyebrow + .gameai-subsection-title {
+  margin-top: 0;
+}
+
+/* --- Highlighted design principle --- */
+.gameai-callout {
+  margin: 28px 0;
+  padding: 16px 0 16px 22px;
+  border-left: 3px solid var(--ink);
+  font-size: clamp(15px, 2.1vw, 18px);
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.005em;
+}
+
+/* --- Typographic flow chains --- */
+.gameai-flowcase {
+  margin: 24px 0;
+}
+
+.gameai-flow-label {
+  display: block;
+  font-family: "Copperplate Gothic", "Copperplate", "Cinzel", serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.gameai-flow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  row-gap: 8px;
+}
+
+.gameai-flow li {
+  display: flex;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+}
+
+.gameai-flow li + li::before {
+  content: "→";
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  color: rgba(0, 0, 0, 0.35);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.gameai-flow-node {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--gameai-rule);
+  background: var(--gameai-wash);
+  padding: 9px 13px;
+  font-size: clamp(11.5px, 1.4vw, 13px);
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
+.gameai-flow li.is-terminal .gameai-flow-node {
+  border-color: var(--ink);
+  color: var(--ink);
+  font-weight: 700;
+  background: transparent;
+}
+
+/* --- Vertical architecture diagrams --- */
+.gameai-stack {
+  margin: 28px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gameai-stack-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  max-width: 380px;
+  box-sizing: border-box;
+  border: 1px solid var(--gameai-rule);
+  background: var(--gameai-wash);
+  padding: 14px 18px;
+  text-align: center;
+}
+
+.gameai-stack-node.is-strong {
+  border-color: var(--ink);
+  background: transparent;
+}
+
+.gameai-stack-node.is-future {
+  border-style: dashed;
+  border-color: var(--gameai-rule-soft);
+  background: transparent;
+}
+
+.gameai-stack-title {
+  font-family: "Copperplate Gothic", "Copperplate", "Cinzel", serif;
+  font-size: clamp(0.78rem, 1.6vw, 0.9rem);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.gameai-stack-node.is-future .gameai-stack-title {
+  color: var(--muted);
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0.04em;
+}
+
+.gameai-stack-steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-top: 4px;
+}
+
+.gameai-stack-step {
+  font-size: clamp(11.5px, 1.4vw, 13px);
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+.gameai-stack-inner-arrow {
+  font-size: 0.72rem;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.gameai-stack-note {
+  font-size: clamp(11.5px, 1.4vw, 13px);
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.gameai-stack-arrow {
+  display: block;
+  padding: 7px 0;
+  color: rgba(0, 0, 0, 0.35);
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* --- Two-branch split inside a stack --- */
+.gameai-branch {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 720px;
+}
+
+.gameai-branch-item {
+  border: 1px solid var(--gameai-rule);
+  background: var(--gameai-wash);
+  padding: 16px 18px;
+}
+
+.gameai-branch-label {
+  display: block;
+  font-size: clamp(0.76rem, 1.5vw, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.gameai-branch-desc {
+  margin: 0;
+  font-size: clamp(11.5px, 1.4vw, 13px);
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* --- Figure --- */
+.gameai-figure {
+  margin: 32px 0;
+}
+
+.gameai-figure-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--gameai-rule);
+  background: #fff;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gameai-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gameai-figure-hint {
+  display: none;
+  margin-top: 8px;
+  font-size: 11.5px;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.gameai-figure-caption {
+  display: block;
+  margin-top: 12px;
+  font-size: clamp(12px, 1.5vw, 13.5px);
+  line-height: 1.55;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* --- Metrics --- */
+.gameai-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 24px 32px;
+  margin: 28px 0;
+}
+
+.gameai-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 2px solid var(--ink);
+  padding-top: 14px;
+}
+
+.gameai-metric-value {
+  font-family: "Copperplate Gothic", "Copperplate", "Cinzel", serif;
+  font-size: clamp(1.5rem, 3.4vw, 2.15rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  color: var(--ink);
+  overflow-wrap: break-word;
+}
+
+.gameai-metric-label {
+  font-size: clamp(12.5px, 1.6vw, 14px);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.gameai-metric-note {
+  font-size: clamp(11.5px, 1.4vw, 12.5px);
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+/* --- Contrast pair --- */
+.gameai-contrast {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin: 24px 0 28px;
+}
+
+.gameai-contrast-item {
+  border-top: 2px solid var(--ink);
+  padding-top: 14px;
+}
+
+.gameai-contrast-lead {
+  display: block;
+  font-size: clamp(11.5px, 1.4vw, 12.5px);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.gameai-contrast-quote {
+  margin: 0;
+  font-size: clamp(15px, 2.1vw, 18px);
+  line-height: 1.45;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* --- Comparison table --- */
+.gameai-table-wrap {
+  overflow-x: auto;
+  margin: 24px 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gameai-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: clamp(13px, 1.6vw, 15px);
+}
+
+.gameai-table th,
+.gameai-table td {
+  text-align: left;
+  padding: 12px 16px 12px 0;
+  border-bottom: 1px solid var(--gameai-rule-soft);
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.gameai-table thead th:last-child {
+  text-align: right;
+  padding-right: 0;
+}
+
+.gameai-table thead th {
+  border-bottom: 1px solid var(--ink);
+  font-family: "Copperplate Gothic", "Copperplate", "Cinzel", serif;
+  font-size: clamp(0.7rem, 1.4vw, 0.78rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.gameai-table tbody th {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.gameai-table td {
+  text-align: right;
+  padding-right: 0;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.gameai-table td strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* --- Deliverables list --- */
+.gameai-list--split {
+  columns: 2;
+  column-gap: 32px;
+}
+
+.gameai-list--split li {
+  break-inside: avoid;
+}
+
+/* --- Closing takeaways --- */
+.gameai-takeaways {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 2px solid var(--ink);
+}
+
+.gameai-takeaway-list {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  counter-reset: takeaway;
+}
+
+.gameai-takeaway-list li {
+  counter-increment: takeaway;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--gameai-rule-soft);
+  font-size: clamp(14px, 1.9vw, 16.5px);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.gameai-takeaway-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.gameai-takeaway-list li::before {
+  content: "0" counter(takeaway);
+  font-family: "Copperplate Gothic", "Copperplate", "Cinzel", serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (max-width: 640px) {
+  .gameai-section-card {
+    padding: 32px 22px;
+  }
+
+  /* The date is nowrap, so on narrow screens it was being cut off by the
+     card's overflow:hidden. Stack it under the title instead. */
+  .gameai-section-title-wrapper {
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+
+  .gameai-section-date {
+    margin-top: 0;
+  }
+
+  /* Flow chains stack vertically so labels stay readable */
+  .gameai-flow {
+    flex-direction: column;
+    align-items: stretch;
+    row-gap: 0;
+  }
+
+  .gameai-flow li {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gameai-flow li + li::before {
+    content: "↓";
+    padding: 5px 0;
+    text-align: center;
+  }
+
+  .gameai-flow-node {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .gameai-stack-node {
+    max-width: none;
+  }
+
+  .gameai-figure-scroll img {
+    width: 680px;
+    max-width: none;
+  }
+
+  .gameai-figure-hint {
+    display: block;
+  }
+
+  .gameai-list--split {
+    columns: 1;
+  }
+
+  .gameai-callout {
+    padding-left: 16px;
+  }
+}
