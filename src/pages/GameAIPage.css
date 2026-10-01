@@ -718,6 +718,28 @@
   font-weight: 700;
 }
 
+/* Text-heavy variant: left-aligned, wrapping cells */
+.gameai-table--text thead th:last-child,
+.gameai-table--text td {
+  text-align: left;
+  white-space: normal;
+  padding-right: 16px;
+  vertical-align: top;
+}
+
+.gameai-table--text tbody th {
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.gameai-table-sub {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.85em;
+  font-weight: 400;
+  color: var(--muted);
+}
+
 /* --- Deliverables list --- */
 .gameai-list--split {
   columns: 2;

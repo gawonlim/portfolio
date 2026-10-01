@@ -498,23 +498,164 @@ export function GameAIPage() {
               </div>
 
               <div className="gameai-block">
-                <span className="gameai-eyebrow">Evaluating the Evaluator</span>
-                <h4 className="gameai-subsection-title">Reliability Before Optimization</h4>
+                <span className="gameai-eyebrow">Player Personas</span>
+                <h4 className="gameai-subsection-title">Not One Player, but Many Kinds of Players</h4>
+
                 <p className="gameai-paragraph">
-                  After improving recall, reproducibility turned out to be the more important bottleneck: an evaluator that reaches a different verdict on the same conversation from run to run cannot support a model-selection decision, no matter how good any single run looks.
+                  The Evaluator Agents were extended beyond NPC dialogue quality to also assess the <strong>overall game flow and gaming experience</strong>. To make playthroughs more human-like, I drew on <strong>gamer taxonomy research</strong> and added the following personas to both the Player Agent and the Evaluator Agent.
                 </p>
 
-                <div className="gameai-metrics">
-                  <Metric value="68%" label="of judgment flips" note="localized to Part 2" />
-                  <Metric value="0.571 → 0.747" label="Part 2 inter-run Jaccard" note="after redesign" />
-                  <Metric value="26 / 31" label="conversations improved" />
+                <div className="gameai-table-wrap">
+                  <table className="gameai-table gameai-table--text">
+                    <thead>
+                      <tr>
+                        <th scope="col">Persona</th>
+                        <th scope="col">Core Behavior</th>
+                        <th scope="col">Closest Academic Concept</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">
+                          Speedrunner
+                          <span className="gameai-table-sub">Efficiency-driven</span>
+                        </th>
+                        <td>Clears with the fewest turns and minimal dialogue; treats trust-building as a cost.</td>
+                        <td>
+                          <em>Hexad — Achiever</em>
+                          <br />
+                          <em>Quantic Foundry — Achievement</em>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Socializer
+                          <span className="gameai-table-sub">Exploratory &amp; talkative</span>
+                        </th>
+                        <td>Talks to every NPC; building trust is the goal in itself.</td>
+                        <td>
+                          <em>Hexad — Socialiser</em>
+                          <br />
+                          <em>DejaBoom!</em> — exploration-motivation cluster
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Detective
+                          <span className="gameai-table-sub">Careful reasoner</span>
+                        </th>
+                        <td>Gathers clues and combines them logically at once; avoids hasty conclusions.</td>
+                        <td>
+                          <em>Quantic Foundry — Strategy</em>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Empathic
+                          <span className="gameai-table-sub">Emotion-driven role-player</span>
+                        </th>
+                        <td>Follows NPCs' emotional arcs; sees trust as a relationship.</td>
+                        <td>
+                          <em>Quantic Foundry — Story / Fantasy</em>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Skeptic
+                          <span className="gameai-table-sub">Doubter</span>
+                        </th>
+                        <td>Checks NPC statements for contradictions and lies; puts fact-checking first.</td>
+                        <td>Clue-reliability verification literature on mystery games</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Impulsive
+                          <span className="gameai-table-sub">Impulsive &amp; intuitive</span>
+                        </th>
+                        <td>Guesses quickly and pushes forward even when clues are insufficient.</td>
+                        <td>
+                          <em>BrainHex — Daredevil</em>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
 
+                <p className="gameai-figure-caption">
+                  Baseline: a neutral default persona serves as the comparison point for benchmarks and is not counted among the six.
+                </p>
+              </div>
+
+              <div className="gameai-block">
+                <span className="gameai-eyebrow">Internal Tool</span>
+                <h4 className="gameai-subsection-title">Player Agent Simulator</h4>
+
                 <p className="gameai-paragraph">
-                  Instead of continuing prompt tuning blindly, I decomposed the evaluator and measured which stage was responsible for instability. The analysis localized most judgment flips to Part 2, leading to a targeted multi-judge panel redesign.
+                  To make the pipeline easy for people across the company to use, I built a web-based <strong>Player Agent Simulator</strong>. Team members can edit Player Agent personas directly, launch playthroughs, and — once a run finishes — review flagged problematic NPC utterances, in-game quantitative metrics such as turns to completion, and the gaming experience itself through graphs and <strong>Steam-style review feedback</strong>. The tool is still in active use.
                 </p>
 
-                <FlowRow items={['Measure', 'Localize Failure', 'Redesign', { label: 'Verify', terminal: true }]} />
+                <FlowRow
+                  items={[
+                    'Configure Personas',
+                    'Run Playthroughs',
+                    'Flag NPC Utterances',
+                    { label: 'Review Metrics & Experience', terminal: true },
+                  ]}
+                />
+
+                <figure className="gameai-figure">
+                  <div className="gameai-figure-scroll">
+                    <img
+                      src="/simulator-configure.jpg"
+                      width={1280}
+                      height={639}
+                      alt="Player Agent Simulator configuration screen. A Participants list on the left sets how many runs each persona gets (SpeedRunner, Socializer, Detective, Empathic, Skeptic, Impulsive, and custom personas). A Settings panel on the right edits the selected persona's main instruction, personality, speech style, strategy, and goal. At the bottom are the utterance cap, concurrency, total run count, and a Run button."
+                      loading="lazy"
+                    />
+                  </div>
+                  <span className="gameai-figure-hint" aria-hidden="true">
+                    Scroll horizontally to view the full screen →
+                  </span>
+                  <figcaption className="gameai-figure-caption">
+                    Configure — edit each persona directly and choose how many runs it gets.
+                  </figcaption>
+                </figure>
+
+                <figure className="gameai-figure">
+                  <div className="gameai-figure-scroll">
+                    <img
+                      src="/simulator-run.jpg"
+                      width={1279}
+                      height={624}
+                      alt="Player Agent Simulator run screen. The center shows a live conversation between the Player Agent and NPCs for the current quest, the left column shows the agent's planning and decision log, the right column shows current goals, and a progress ring and per-persona progress bars track the batch."
+                      loading="lazy"
+                    />
+                  </div>
+                  <span className="gameai-figure-hint" aria-hidden="true">
+                    Scroll horizontally to view the full screen →
+                  </span>
+                  <figcaption className="gameai-figure-caption">
+                    Run — watch the Player Agent's dialogue, reasoning log, and goals live while the batch progresses.
+                  </figcaption>
+                </figure>
+
+                <figure className="gameai-figure">
+                  <div className="gameai-figure-scroll">
+                    <img
+                      src="/simulator-dashboard.jpg"
+                      width={1280}
+                      height={647}
+                      alt="Player Agent Simulator dashboard. Panels show per-persona completion rate, utterance count, NPC response time, and post-game ratings; per-phase satisfaction curves and a criteria heatmap; Steam-style written reviews from each persona; a list of runs with flagged NPC utterances and flag rates; and a per-run details view."
+                      loading="lazy"
+                    />
+                  </div>
+                  <span className="gameai-figure-hint" aria-hidden="true">
+                    Scroll horizontally to view the full screen →
+                  </span>
+                  <figcaption className="gameai-figure-caption">
+                    Dashboard — quantitative metrics, satisfaction curves, Steam-style reviews, and flagged NPC utterances in one place.
+                  </figcaption>
+                </figure>
               </div>
 
               <div className="gameai-block">
@@ -559,6 +700,57 @@ export function GameAIPage() {
                 <p className="gameai-paragraph">
                   The Player Agent was compared against <strong>218 real player logs</strong>. Overall quest progression behavior was similar to humans, while utterance length remained a clear divergence and an identified improvement target.
                 </p>
+
+                <figure className="gameai-figure">
+                  <div className="gameai-figure-scroll">
+                    <img
+                      src="/human-validation-summary.jpg"
+                      width={1061}
+                      height={154}
+                      alt="Summary cards comparing the simulated Player Agent (SIM) with human players (HUM): completion rate excluding server errors 97.1% vs 68.6%; turns to completion 91.1 vs 90.8; utterance length 38.4 vs 22.4 characters (ratio 1.71); completion within 75 turns 38.2% vs 39%."
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption className="gameai-figure-caption">
+                    Summary — Player Agent (SIM) vs. human players (HUM).
+                  </figcaption>
+                </figure>
+
+                <figure className="gameai-figure">
+                  <div className="gameai-figure-scroll">
+                    <img
+                      src="/human-validation-completion-rate.jpg"
+                      width={1037}
+                      height={598}
+                      alt="Line chart and table of completion rate within N turns for SIM (20 runs) and HUMAN (218 players). At ≤50 / ≤75 / ≤100 / ≤125 / ≤150 turns: SIM 20.6% / 38.2% / 70.6% / 76.5% / 85.3%; HUMAN 13.8% / 39% / 65.6% / 81.7% / 92.2%. Ratios ×1.5, ×1.0, ×1.1, ×0.9, ×0.9."
+                      loading="lazy"
+                    />
+                  </div>
+                  <span className="gameai-figure-hint" aria-hidden="true">
+                    Scroll horizontally to view the full chart →
+                  </span>
+                  <figcaption className="gameai-figure-caption">
+                    Completion rate within N turns — the two curves track closely across turn budgets.
+                  </figcaption>
+                </figure>
+
+                <figure className="gameai-figure">
+                  <div className="gameai-figure-scroll">
+                    <img
+                      src="/human-validation-progress-by-turn.jpg"
+                      width={1031}
+                      height={451}
+                      alt="Line chart of average quest progress by turn for SIM and HUMAN, both aligned to start at quest 002_01. The curves rise at nearly the same slope through about turn 60, after which SIM stays slightly ahead, ending near quest 008 versus about 007.8 for humans at turn 150."
+                      loading="lazy"
+                    />
+                  </div>
+                  <span className="gameai-figure-hint" aria-hidden="true">
+                    Scroll horizontally to view the full chart →
+                  </span>
+                  <figcaption className="gameai-figure-caption">
+                    Average quest progress by turn — both start from the same quest, so the slopes compare progression speed directly.
+                  </figcaption>
+                </figure>
               </div>
 
               <div className="gameai-block">
